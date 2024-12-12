@@ -1,7 +1,10 @@
-import { Card } from 'antd'
+import { Card , Button} from 'antd'
 import React from 'react'
 
 const Cardpay = ({values}) => {
+  const handleOpenJobUrl = () => {
+    window.open(values.jobUrl, '_blank'); // Open the job URL in a new tab
+  };
   return (
     <div><Card
     title={values.company}
@@ -14,7 +17,9 @@ const Cardpay = ({values}) => {
     <p>location: {values.location}</p>
     <p>date: {values.date}</p>
     <p>agoTime: {values.agoTime}</p>
-    <p>jobUrl: {values.jobUrl}</p>
+    <p>jobUrl: <Button type="primary" onClick={handleOpenJobUrl}>
+        Apply Now
+      </Button></p>
    
   </Card></div>
   )
